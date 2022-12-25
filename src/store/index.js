@@ -1,3 +1,4 @@
+// we have use token here and this will be used for authentication (using in router)
 import { createStore } from 'vuex'
 
 export default createStore({

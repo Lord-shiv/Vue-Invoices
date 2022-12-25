@@ -7,12 +7,22 @@
 
        <div class="navbar-menu">
         <div class="navbar-end">
-          <template v-if="$store.state.isAuthenticated">
+                    <template v-if="$store.state.isAuthenticated">
             <router-link to="/dashboard" class="navbar-item">Dashboard</router-link>
+            <router-link to="/dashboard/clients" class="navbar-item">Clients</router-link>
+            <router-link to="/dashboard/invoices" class="navbar-item">Invoices</router-link>
+
+            <div class="navbar-item">
+              <div class="buttons">
+                <router-link to="/dashboard/invoices/add" class="button is-success">Add invoice</router-link>
+                <router-link to="/dashboard/my-account" class="button is-light">My account</router-link>
+              </div>
+            </div>      
           </template>
 
           <template v-else>
             <router-link to="/" class="navbar-item">Home</router-link>
+
             <div class="navbar-item">
               <div class="buttons">
                 <router-link to="/sign-up" class="button is-success"><strong>Sign up</strong></router-link>
@@ -36,7 +46,7 @@
 </template>
 
 <script>
-  import axios from 'axios';
+  import axios from 'axios'
   export default {
     name: 'App',
     beforeCreate() {
